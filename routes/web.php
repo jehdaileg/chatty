@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\TestMessageEvent;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,5 +16,8 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+
+    broadcast(new TestMessageEvent);
+
     return Inertia('Index');
 });

@@ -25,6 +25,11 @@ window.Echo = new Echo({
     disableStats: true,
 });
 
+window.Echo.channel('public-channel-for-test')
+            .listen(".testMessage", (e) => {
+                console.log("Test Done Succesffuly");
+            })
+
 const app = document.getElementById("app");
 
 const pages = import.meta.glob("./pages/**/*.vue");
